@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="displayDate()">Display Date</button>
+    <input type="text" id="dateInput">
+    
+    <button onclick="factorial()">Calculate Factorial</button>
+
+    <button onclick="multiplicationTable()">Multiplication Table</button>
+
+
+    <script>
+    function displayDate() {
+        var currentDate = new Date();
+        var dateInput = document.getElementById("dateInput");
+        dateInput.value = currentDate.toDateString();
+    }
+    </script>
+
+    <script>
+        function factorial(){
+            var n = prompt("Enter a number:");
+        var factorial = 1;
+
+        for (var i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+
+        alert("The factorial of " + n + " is: " + factorial);
+    }
+    </script>
+
+    <script>
+        function multiplicationTable() {
+            var n = prompt("Enter a Number:");
+            var table = "";
+            for (var i = 1; i <= 10; i++) {
+                table += n + " x " + i + " = " + (n * i) + "\n";
+            }
+            alert(table);
+        }
+    </script>
+
+    <script>
+    function sumNumbers() {
+        var n = prompt("Enter a number:");
+        var sum = parseInt(n);
+        var addAnother = true;
+
+        var confirmAdd = confirm("Do you want to add another number?");
+            if (confirmAdd) {
+                var num = prompt("Enter another number:");
+                sum += parseInt(num);
+                
+            } else {
+                addAnother = false;
+            }
+        
+
+        alert("The sum of the numbers is: " + sum);
+    }
+    </script>
+
+    <button onclick="sumNumbers()">Calculate Sum</button>
+
+
+
+</body>
+</html>

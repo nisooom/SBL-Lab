@@ -1,0 +1,26 @@
+.catalogue {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.book {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.book img {
+    width: 100%;
+    height: auto;
+}
+
+.book h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.book p {
+    margin-top: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words Converter</title>
+    <script>
+        function convertNumberToWords() {
+            var number = document.getElementById("number").value;
+            var words = "";
+
+            // Check if the input is a valid number
+            if (isNaN(number) || number < 0 || number > 999) {
+                words = "Invalid input. Please enter a number between 0 and 999.";
+            } else {
+                // Define arrays for the words
+                var units = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+                var tens = ["", "ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+                var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+
+                // Convert the number to words
+                if (number == 0) {
+                    words = "zero";
+                } else if (number < 10) {
+                    words = units[number];
+                } else if (number < 20) {
+                    words = teens[number - 10];
+                } else if (number < 100) {
+                    words = tens[Math.floor(number / 10)] + " " + units[number % 10];
+                } else {
+                    words = units[Math.floor(number / 100)] + " hundred " + tens[Math.floor((number % 100) / 10)] + " " + units[number % 10];
+                }
+            }
+
+            // Display the result
+            document.getElementById("result").innerHTML = words;
+        }
+    </script>
+</head>
+<body>
+    <h1>Number to Words Converter</h1>
+    <input type="text" id="number" placeholder="Enter a number (0-999)">
+    <button onclick="convertNumberToWords()">Convert</button>
+    <p id="result"></p>
+</body>
+</html>
